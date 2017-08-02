@@ -1,21 +1,35 @@
 /**
  * Created by PengLunJian on 2017-8-2.
  */
+'use strict';
 module.exports = function (grunt) {
+
     require('load-grunt-tasks')(grunt);
+
+    require('time-grunt')(grunt);
+
+    var config = {
+        src: 'src',
+        dist: 'dist',
+        test: 'test',
+    }
+
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        config: config,
+        copy: {
+            dist: {
+                src: '<%= config.src %>/index.html',
+                dest: '<%= config.dist %>/index.html'
             },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+            test: {
+                src: '<%= config.src %>/index.html',
+                dest: '<%= config.test %>/index.html'
+            }
+        },
+        clean: {
+            test: {
+                src: '<%= config.dist %>/index.html'
             }
         }
-    });
-    grunt.registerTask('default', 'Log some stuff.', function () {
-        grunt.log.write('Logging some stuff...').ok();
     });
 };
