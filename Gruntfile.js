@@ -12,7 +12,6 @@ module.exports = function (grunt) {
             dist: 'dist/*'
         },
         csslint: {
-            /* 检查 CSS 语法 */
             src: ['test/css/*.css', 'dist/css/*.css']
         },
         jshint: {
@@ -109,7 +108,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('dev', ['uglify', 'less']);
+    grunt.registerTask('dev', ['uglify', 'less', 'csslint']);
     grunt.registerTask('build', ['csslint', 'jshint', 'imagemin', 'cssmin', 'uglify']);
     grunt.registerTask('default', ['csslint', 'jshint', 'imagemin', 'cssmin', 'uglify']);
 
