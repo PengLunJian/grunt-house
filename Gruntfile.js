@@ -28,8 +28,15 @@ module.exports = function (grunt) {
         },
         clean: {
             test: {
+                src: '<%= config.test %>/index.html'
+            },
+            dist: {
                 src: '<%= config.dist %>/index.html'
             }
         }
+    });
+
+    grunt.registerTask('default', [''], function () {
+        console.log("SUCCESS");
     });
 };
