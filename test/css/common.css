@@ -1,5 +1,3 @@
-@import "variable";
-
 * {
   margin: 0px;
   padding: 0px;
@@ -7,38 +5,34 @@
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
-ul, ol {
+ul,
+ol {
   margin: 0px;
   list-style: none;
 }
-
 img {
   border: none;
   width: 100%;
   height: 100%;
 }
-
-i, em, address {
+i,
+em,
+address {
   font-style: normal;
 }
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-
 html {
   -webkit-text-size-adjust: none;
 }
-
 body {
   min-width: 1200px;
   overflow-x: hidden;
   font-size: 0.13rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 .none {
   width: 1px;
   height: 0.2rem;
@@ -50,7 +44,6 @@ body {
   line-height: 0.2rem;
   background-color: transparent;
 }
-
 .hidden {
   position: fixed;
   top: 0px;
@@ -59,17 +52,14 @@ body {
   bottom: 0px;
   overflow: hidden;
 }
-
 a {
   display: block;
-  color: @black;
+  color: #000000;
   text-decoration: none;
 }
-
 h1 {
   margin: 0px;
 }
-
 select {
   border: none;
   font-size: 0.13rem;
@@ -77,19 +67,20 @@ select {
   background-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-input, textarea {
+input,
+textarea {
   border: none;
   font-size: 0.13rem;
   -webkit-appearance: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
-
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   border: none;
   display: inline-block;
   vertical-align: middle;
@@ -100,12 +91,6 @@ input[type="checkbox"], input[type="radio"] {
   background-repeat: no-repeat;
   background-position: center center;
 }
-
-input[type="checkbox"]:checked, input[type="radio"]:checked,
-input[type="checkbox"].checked, input[type="radio"].checked {
-
-}
-
 .vertical:before {
   width: 0px;
   content: '';
@@ -114,25 +99,21 @@ input[type="checkbox"].checked, input[type="radio"].checked {
   display: inline-block;
   vertical-align: middle;
 }
-
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 .ellipsis.multiple {
   white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
 .blur {
   filter: blur(10px);
   -webkit-filter: blur(10px);
 }
-
 .disabled {
   color: #c5c5c5 !important;
   cursor: not-allowed !important;

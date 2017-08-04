@@ -11,11 +11,25 @@ module.exports = function (grunt) {
             test: 'test/*',
             dist: 'dist/*'
         },
+        copy: {
+            html: {
+                expand: true,
+                cwd: 'src',
+                src: '*.html',
+                dest: 'test/',
+            },
+            script: {
+                expand: true,
+                cwd: 'src/js',
+                src: '*.js',
+                dest: 'test/js/',
+            }
+        },
         csslint: {
             src: ['test/css/*.css', 'dist/css/*.css']
         },
         jshint: {
-            all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js']
+            all: ['lib/**/*.js', 'src/**/*.js']
         },
         imagemin: {
             dist: {
@@ -46,12 +60,13 @@ module.exports = function (grunt) {
             }
         },
         less: {
-            test: {
+            css: {
                 expand: true,
                 cwd: 'src/less/',
                 src: ['*.less', '!variable.less'],
-                dest: 'test/less',
-                ext: '.css'
+                dest: 'test/css',
+                ext: '.css',
+                extDot: 'last'
             }
         },
         cssmin: {
@@ -78,12 +93,12 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            img: {
+            image: {
                 files: ['src/images/*.{png,jpg,jpeg,gif}'],
                 options: {
                     livereload: true
                 },
-                tasks: ['uglify']
+                tasks: ['imagemin']
             },
             less: {
                 options: {
@@ -93,22 +108,17 @@ module.exports = function (grunt) {
                 files: ['src/less/*.less', '!src/less/variable.less'],
                 tasks: ['less']
             },
-            js: {
+            copy: {
                 options: {
                     livereload: true
                 },
-                files: ['src/js/*.js']
-            },
-            html: {
-                options: {
-                    livereload: true
-                },
-                files: ['src/*.html']
+                files: ['src/js/*.js', 'src/*.html'],
+                tasks: ['copy']
             }
         }
     });
 
-    grunt.registerTask('dev', ['uglify', 'less', 'csslint']);
+    grunt.registerTask('dev', ['copy', 'less', 'csslint', 'imagemin']);
     grunt.registerTask('build', ['csslint', 'jshint', 'imagemin', 'cssmin', 'uglify']);
     grunt.registerTask('default', ['csslint', 'jshint', 'imagemin', 'cssmin', 'uglify']);
 
