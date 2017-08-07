@@ -8,7 +8,6 @@
   z-index: 1000;
   line-height: 66px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .header .header-box {
   width: 1200px;
@@ -31,20 +30,184 @@
 }
 .slider-container {
   width: 100%;
+  height: 400px;
   position: relative;
   text-align: center;
 }
 .slider-container .slider-item {
-  width: 110%;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: 1;
 }
+.slider-container .slider-item a {
+  height: 100%;
+}
 .slider-container .slider-item img {
+  width: 110%;
   -webkit-animation: mvslideAnime 16s infinite;
   -o-animation: mvslideAnime 16s infinite;
   animation: mvslideAnime 16s infinite;
+}
+.suggest-container .suggest-content {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 10px;
+  text-align: center;
+}
+.suggest-container .suggest-item {
+  position: relative;
+  padding: 20px 0px;
+}
+.suggest-container .suggest-item a:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.suggest-container .suggest-img {
+  width: 104px;
+  height: 91px;
+  position: absolute;
+}
+.suggest-container .suggest-info {
+  text-align: left;
+  line-height: 25px;
+  padding: 25px 0px 15px 104px;
+}
+.suggest-container .suggest-info .suggest-title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 25px;
+}
+.suggest-container .suggest-info .suggest-desc {
+  color: #999999;
+  font-size: 14px;
+  font-weight: bold;
+}
+.project-container {
+  background-color: #f1f1f1;
+}
+.project-container .project-content {
+  width: 1200px;
+  padding: 10px;
+  margin: 0px auto;
+}
+.project-container .project-title {
+  padding: 44px 0px;
+  line-height: 72px;
+  text-align: center;
+}
+.project-container .project-tab {
+  color: #333333;
+  font-size: 16px;
+  line-height: 55px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d2d2d2;
+}
+.project-container .project-button {
+  float: left;
+  width: 170px;
+  cursor: pointer;
+}
+.project-container .project-button.active {
+  color: #2aa959;
+}
+.project-container .project-list {
+  padding: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.project-container .project-list:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.project-container .project-column {
+  padding: 0px;
+}
+.project-container .project-column:nth-child(1) .project-info {
+  padding: 20px 20px;
+}
+.project-container .project-item {
+  padding: 10px;
+}
+.project-container .project-item a {
+  background-color: #ffffff;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.project-container .project-item a:hover {
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+.project-container .project-item a:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.project-container .project-img {
+  overflow: hidden;
+}
+.project-container .project-img img {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.project-container .project-info {
+  padding: 10px 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.project-container .project-info .project-price {
+  display: block;
+  color: #ff2929;
+  font-size: 20px;
+}
+.project-container .project-info .project-price > span {
+  font-size: 14px;
+}
+.project-container .project-info .project-desc {
+  color: #333333;
+  font-size: 14px;
+}
+.project-container .project-name {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  padding-right: 30px;
+  background: url("../images/shape_icon.png") center right no-repeat;
+}
+.project-container .btn.browse {
+  width: 100px;
+  padding: 0px;
+  border: none;
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 34px;
+  background-color: #2aa959;
+}
+.project-container .star-content {
+  margin-top: 13px;
+}
+.project-container .star-content .star-item {
+  float: left;
+  width: 18px;
+  height: 17px;
+  margin-right: 2px;
+  background: url("../images/star_icon.png") center center no-repeat;
 }
 @keyframes mvslideAnime {
   0% {
@@ -64,5 +227,10 @@
   100% {
     -webkit-transform: translate(-100px);
     transform: translate(-100px);
+  }
+}
+@media screen and (min-width: 1366px) {
+  .slider-container {
+    height: 560px !important;
   }
 }

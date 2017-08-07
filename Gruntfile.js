@@ -36,6 +36,7 @@ module.exports = function (grunt) {
                 options: {
                     optimizationLevel: 3
                 },
+
                 files: [
                     {
                         expand: true,

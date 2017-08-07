@@ -60,47 +60,149 @@
             </div>
             <div class="slider-footer"></div>
         </div>
-        <script type="text/javascript">
-            function SliderBanner() {
-                var arguments = arguments.length != 0 ? arguments[0] : arguments;
-                this.sliderTime = arguments['sliderTime'] ? arguments['sliderTime'] : 5;
-                this.sliderIndex = arguments['sliderIndex'] ? arguments['sliderIndex'] : 0;
-                this.sliderTimer = arguments['sliderTimer'] ? arguments['sliderTimer'] : null;
-                this.sliderElement = arguments['sliderElement'] ? arguments['sliderElement'] : '.slider-item';
-
-                this.sliderChange = arguments['sliderChange'] ? arguments['sliderChange'] : function () {
-
-                }
-                this.init();
-            }
-
-            SliderBanner.prototype.init = function () {
-                this.startMove();
-            }
-
-            SliderBanner.prototype.startMove = function () {
-                var _this = this;
-                _this.sliderTimer = setInterval(function () {
-                    var result = _this.sliderIndex < $(_this.sliderElement).length - 1;
-                    _this.sliderIndex = result ? ( _this.sliderIndex + 1) : 0;
-                    $(_this.sliderElement).eq(_this.sliderIndex).fadeIn(2000).siblings().fadeOut(2000);
-                    if ('function' == typeof _this.sliderChange) _this.sliderChange();
-                }, _this.sliderTime);
-            }
-
-            SliderBanner.prototype.stopMove = function () {
-                if (this.sliderTimer) clearInterval(this.sliderTimer);
-            }
-
-            new SliderBanner({
-                sliderTime: 4000,
-                sliderChange: function () {
-                    console.log('slider changed success!');
-                }
-            });
-        </script>
+    </div>
+    <div class="suggest-container">
+        <div class="suggest-content row">
+            <div class="col-xs-3 suggest-item">
+                <a href="javascript:void(0);">
+                    <div class="suggest-img">
+                        <img src="images/home_pic01.png" alt="房屋实拍"/>
+                    </div>
+                    <div class="suggest-info">
+                        <h3 class="suggest-title ellipsis">房屋实拍</h3>
+                        <p class="suggest-desc ellipsis">真实房源照片，不欺瞒</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-3 suggest-item">
+                <a href="javascript:void(0);">
+                    <div class="suggest-img pull-left">
+                        <img src="images/home_pic02.png" alt="房租月付"/>
+                    </div>
+                    <div class="suggest-info">
+                        <h3 class="suggest-title">房租月付</h3>
+                        <p class="suggest-des ellipsis">真实房源照片，不欺瞒</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-3 suggest-item">
+                <a href="javascript:void(0);">
+                    <div class="suggest-img pull-left">
+                        <img src="images/home_pic03.png" alt="安心承诺"/>
+                    </div>
+                    <div class="suggest-info">
+                        <h3 class="suggest-title">安心承诺</h3>
+                        <p class="suggest-des ellipsis">真实房源照片，不欺瞒</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-3 suggest-item">
+                <a href="javascript:void(0);">
+                    <div class="suggest-img pull-left">
+                        <img src="images/home_pic04.png" alt="在线付款"/>
+                    </div>
+                    <div class="suggest-info">
+                        <h3 class="suggest-title">在线付款</h3>
+                        <p class="suggest-des ellipsis">真实房源照片，不欺瞒</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-content">
+            <div class="project-header">
+                <h2 class="project-title">优选项目</h2>
+            </div>
+            <div class="project-body">
+                <ul class="project-tab clearfix">
+                    <li class="project-button active">花桥天琚人才公寓</li>
+                    <li class="project-button">浦东天琚公寓</li>
+                </ul>
+                <ul class="project-block">
+                    <li class="project-list active">
+                        <div class="col-xs-4 project-column">
+                            <div class="project-item">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <div class="project-img">
+                                        <img src="images/project_banner01.png" alt=""/>
+                                    </div>
+                                    <div class="project-info">
+                                        <div class="pull-left">
+                                            <h2 class="project-name">天琚公寓</h2>
+                                            <div class="star-container">
+                                                <ul class="star-content clearfix">
+                                                    <li class="star-item"></li>
+                                                    <li class="star-item"></li>
+                                                    <li class="star-item"></li>
+                                                    <li class="star-item"></li>
+                                                    <li class="star-item"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <button class="btn browse">品牌主页</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 project-column">
+                            <div class="col-xs-6 project-item">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <div class="project-img">
+                                        <img src="images/project_item01.png" alt=""/>
+                                    </div>
+                                    <div class="project-info">
+                                        <em class="project-price">2850<span>元 / 月</span></em>
+                                        <p class="project-desc">朝南 - 25m2 - 1.8m双人床</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 project-item">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <div class="project-img">
+                                        <img src="images/project_item01.png" alt=""/>
+                                    </div>
+                                    <div class="project-info">
+                                        <em class="project-price">2850<span>元 / 月</span></em>
+                                        <p class="project-desc">朝南 - 25m2 - 1.8m双人床</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 project-item">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <div class="project-img">
+                                        <img src="images/project_item01.png" alt=""/>
+                                    </div>
+                                    <div class="project-info">
+                                        <em class="project-price">2850<span>元 / 月</span></em>
+                                        <p class="project-desc">朝南 - 25m2 - 1.8m双人床</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 project-item">
+                                <a href="javascript:void(0);" target="_blank">
+                                    <div class="project-img">
+                                        <img src="images/project_item01.png" alt=""/>
+                                    </div>
+                                    <div class="project-info">
+                                        <em class="project-price">2850<span>元 / 月</span></em>
+                                        <p class="project-desc">朝南 - 25m2 - 1.8m双人床</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project-list"></li>
+                </ul>
+            </div>
+            <div class="project-footer"></div>
+        </div>
     </div>
 </div>
 <div class="footer"></div>
+<!--<script type="text/javascript" src="js/index.page.js"></script>-->
 </body>
 </html>
