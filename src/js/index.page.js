@@ -53,14 +53,59 @@ SliderBanner.prototype.stopMove = function () {
     return this;
 }
 /**
- * BEGIN 实例化轮播图对象
- * Author:PengLunJian
- * Date:2017-08-07
- * @type {SliderBanner} 轮播图类型
+ *
+ * @constructor
  */
-var sb = new SliderBanner({
-    sliderTime: 4000,
-    sliderChange: function () {
-        console.log('slider changed success!');
-    }
-});
+function HomePage() {
+    this.HEADER = arguments['HEADER'] ? arguments['HEADER'] : '#header';
+    this.HEADER_ALPHA = arguments['HEADER_ALPHA'] ? arguments['HEADER_ALPHA'] : 0.5;
+    this.SLIDER_CONTAINER = arguments['SLIDER_CONTAINER'] ? arguments['SLIDER_CONTAINER'] : '.slider-container';
+    this.init();
+}
+/**
+ *
+ * @returns {HomePage}
+ */
+HomePage.prototype.init = function () {
+    /**
+     * BEGIN 实例化轮播图对象
+     * Author:PengLunJian
+     * Date:2017-08-07
+     * @type {SliderBanner} 轮播图类型
+     */
+    var sb = new SliderBanner({
+        sliderTime: 4000,
+        sliderChange: function () {
+            console.log('slider changed success!');
+        }
+    });
+
+    var tools = new Tools({
+        TAB_BTN: '.project-button',
+        TARGET_ELEMENT: '.project-inside'
+    });
+
+    this.scrollMove();
+
+    return this;
+}
+/**
+ *
+ * @returns {HomePage}
+ */
+HomePage.prototype.scrollMove = function () {
+    var _this = this;
+    $(window).on("scroll", function () {
+        var scrollTop = $(this).scrollTop();
+        var sliderHeight = $(_this.SLIDER_CONTAINER).outerHeight();
+        var rate = scrollTop / sliderHeight >= 1 ? 1 : scrollTop / sliderHeight;
+        var backgroundColor = "background-color:rgba(0,0,0," + _this.HEADER_ALPHA * rate + ");";
+        $(_this.HEADER).attr("style", backgroundColor);
+    });
+    return this;
+}
+/**
+ *
+ * @type {HomePage}
+ */
+var hp = new HomePage();
